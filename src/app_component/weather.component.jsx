@@ -14,11 +14,14 @@ const Weather=(props)=>{
                 ) : null}
                 {props.weathericon ? (
                 <h5 className="py-4">
+                    
                     <img src={Image} />
                 </h5>
                 ) : null}
+                 
                 {props.temp_celsius ? (
-                <h1 className="py-2">{props.temp_celsius}&deg;</h1>
+                   
+                <h1 className="py-2">Main Temp : {props.temp_celsius}&deg;</h1>
                 ) : null}
 
                 {/* show max and min temp */}
@@ -41,8 +44,8 @@ function maxminTemp(min,max) {
     if (max && min) {
         return (
           <h3>
-            <span className="px-4">{min}&deg;</span>
-            <span className="px-4">{max}&deg;</span>
+            <span className="px-4">Min Temp : {min}&deg;</span>
+            <span className="px-4">Max Temp : {max}&deg;</span>
           </h3>
         );
     }

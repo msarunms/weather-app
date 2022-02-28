@@ -1,7 +1,10 @@
-import React from 'react';
+import React ,{useState} from 'react';
 import "./form.style.css";
 
 const Form = props => {
+    const [city,setCity] = useState("Chennai");
+    const [country,setcountry] = useState('IN');
+    
     return (
         <div className="container h-100">
             <form onSubmit={props.loadweather}>
@@ -14,6 +17,8 @@ const Form = props => {
                     placeholder="City"
                     name="city"
                     autoComplete="off"
+                    value={city}
+                    onChange={(e) => {setCity(e.target.value)}}
                 />
                 </div>
                 <div className="col-md-3">
@@ -23,6 +28,8 @@ const Form = props => {
                     placeholder="Country"
                     name="country"
                     autoComplete="off"
+                    value={country}
+                    onChange={(e) => {setcountry(e.target.value)}}
                 />
                 </div>
                 <div className="col-md-3 mt-md-0 mt-2 text-md-left ">
